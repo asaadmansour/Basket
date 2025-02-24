@@ -63,12 +63,12 @@ Check out the live version of the website: [Basket on Netlify](https://basket-as
 
 ## How to Run the Project Locally
 1. Clone the repository:
-   ```sh
+   ```
    git clone https://github.com/asaadmansour/Basket.git
-sh```
+   ```
 2.Navigate to the project folder:
 ```
-cd Basket
+   cd Basket
 ```
 3.Use Live Server 
 
