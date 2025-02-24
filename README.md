@@ -34,6 +34,10 @@ Basket/
 │── .gitignore       # Excludes node_modules and API keys
 │── README.md        # Documentation
 ```
+
+## Live Demo
+Check out the live version of the website: [Basket on Netlify](https://basket-asaad.netlify.app)
+
 ## How to Test the Website
 
 ### Log in with Fake Store API Users
@@ -57,8 +61,16 @@ Basket/
    - ZIP Code: Any value
 4. Submit the payment and check for a successful transaction message
 
-## Live Demo
-Check out the live version of the website: [Basket on Netlify](https://basket-asaad.netlify.app)
+## How to Run the Project Locally
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/asaadmansour/Basket.git
+sh```
+2.Navigate to the project folder:
+```
+cd Basket
+```
+3.Use Live Server 
 
 ## Best Practices Followed
 - **Separation of Concerns:** The project follows MVC architecture, keeping business logic separate from UI rendering
