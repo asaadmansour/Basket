@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basket</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Mapbox CSS from npm -->
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script defer type="module" src="controller.js"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="logo-location">
+          <div class="logo">
+            <a href="index.html">
+              <div class="logo-content">
+                <img src="imgs/1.png" alt="" />
+                <span class="logoword">Basket</span>
+              </div>
+            </a>
+          </div>
+          <div class="location">
+            <img src="imgs/1.webp" alt="" />
+            <i class="fa-solid fa-caret-down"></i>
+            <!-- Map modal container -->
+            <div class="map-modal hidden">
+              <div class="containerr">
+                <div class="map-content">
+                  <div id="mapbox-map"></div>
+                  <!-- Keep this as is -->
+                </div>
+                <div class="maps-btns">
+                  <div class="locate">
+                    <button class="locateme">
+                      <i class="fa-solid fa-location-crosshairs"></i> Locate Me
+                    </button>
+                  </div>
+                  <div class="controlbtns">
+                    <button class="back">Go Back</button>
+                    <button class="confirm disabled">Confirm Location</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="search-bar">
+          <select name="category" id="category" class="dropdown-cat">
+            <option value="all">All</option>
+          </select>
+          <div class="search-input-wrapper">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="What are you looking for?"
+              autocomplete="off"
+            />
+            <button type="button" class="search-button">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+          <div class="search-suggestions hidden"></div>
+        </div>
+        <div class="search-overlay hidden"></div>
+        <ul class="main-nav">
+          <li class="account">
+            <a href="#">
+              <i class="fa fa-user"></i>
+              Account
+              <i class="fa-solid fa-caret-down"></i>
+            </a>
+            <ul class="dropdownlist hidden">
+              <li class="login">
+                <a href="#">Log In<i class="fas fa-sign-in-alt"></i> </a>
+              </li>
+              <li class="signup">
+                <a href="#">Sign Up<i class="fas fa-user-plus"></i> </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#about"><i class="fa fa-question-circle"></i> Help</a>
+          </li>
+          <li class="cart-link">
+            <a href="#">
+              <i class="fa fa-shopping-cart"></i> Cart
+              <span class="cart-count hidden">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="homepagebody">
+      <div class="container">
+        <div class="frame">
+          <i class="fa fa-arrow-left"></i>
+          <div class="posters">
+            <div class="poster active">
+              <img src="imgs/6.jpg" alt="" />
+            </div>
+            <div class="poster">
+              <img src="imgs/8.jpg" alt="" />
+            </div>
+            <div class="poster">
+              <img src="imgs/5.jpg" alt="" />
+            </div>
+            <div class="poster">
+              <img src="imgs/7.jpg" alt="" />
+            </div>
+          </div>
+          <i class="fa fa-arrow-right"></i>
+        </div>
+        <div class="boxesholder">
+          <div data-src="All" class="box typecat">
+            <img data-src="All" src="imgs/13-removebg-preview.png" alt="" />
+            <h3 data-src="All">All</h3>
+          </div>
+          <div data-src="Men's Clothing" class="box typecat">
+            <img
+              data-src="Men's Clothing"
+              src="imgs/3-removebg-preview.png"
+              alt=""
+            />
+            <h3 data-src="Men's Clothing">Men's Clothing</h3>
+          </div>
+          <div data-src="Jewelery" class="box typecat">
+            <img data-src="Jewelery" src="imgs/7-removebg-preview.png" alt="" />
+            <h3 data-src="Jewelery">Jewelery</h3>
+          </div>
+          <div data-src="Women's Clothing" class="box typecat">
+            <img
+              data-src="Women's Clothing"
+              src="imgs/4-removebg-preview.png"
+              alt=""
+            />
+            <h3 data-src="Women's Clothing">Women's Clothing</h3>
+          </div>
+          <div data-src="Electronics" class="box typecat">
+            <img
+              data-src="Electronics"
+              src="imgs/6-removebg-preview.png"
+              alt=""
+            />
+            <h3 data-src="Electronics">Electronics</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reasons active">
+      <div class="container">
+        <div class="grid-container">
+          <h3>MORE REASONS TO SHOP</h3>
+          <div class="grid">
+            <div class="boxx">
+              <img src="imgs/9.jpg" alt="" />
+              <div class="text">
+                <h4>Local finds</h4>
+                <p>Hand-picked brands,locally</p>
+              </div>
+            </div>
+            <div class="boxx">
+              <img src="imgs/8.png" alt="" />
+              <div class="text">
+                <h4>Bestsellers</h4>
+                <p>Fill your basket</p>
+              </div>
+            </div>
+            <div class="boxx">
+              <img src="imgs/11.png" alt="" />
+              <div class="text">
+                <h4>Only on basket</h4>
+                <p>Trending products you need</p>
+              </div>
+            </div>
+            <div class="boxx">
+              <img src="imgs/10.png" alt="" />
+              <div class="text">
+                <h4>New arrivals</h4>
+                <p>Fresh takes you need</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-container two">
+          <h3>DEALS OF THE DAY</h3>
+          <div class="grid two">
+            <div class="boxx">
+              <img src="imgs/12.png" alt="" />
+              <div class="text">
+                <h4>AirPods Pro (3rd Generation)</h4>
+                <p>Apple</p>
+              </div>
+            </div>
+            <div class="boxx">
+              <img src="imgs/13.png" alt="" />
+              <div class="text">
+                <h4>Laptop Handbag Bag</h4>
+                <p>Golden Wolf</p>
+              </div>
+            </div>
+            <div class="boxx">
+              <img src="imgs/14.png" alt="" />
+              <div class="text">
+                <h4>Grandi Cook Pop</h4>
+                <p>Tefal</p>
+              </div>
+            </div>
+            <div class="boxx">
+              <img src="imgs/15.png" alt="" />
+              <div class="text">
+                <h4>W12 Smart Watch Black</h4>
+                <p>imilab</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal hidden overlay" id="login-modal">
+      <div class="modal-content login-form-container">
+        <button class="close-button" id="close-login-modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h2>Login</h2>
+        <form id="login-form">
+          <input type="email" id="login-email" placeholder="Email" required />
+          <input
+            type="password"
+            id="login-password"
+            placeholder="Password"
+            required
+          />
+          <button type="submit" id="login-button">Login</button>
+          <div id="login-message" class="hidden"></div>
+          <div class="login-links">
+            <a href="" id="linktosignup">Don't have an account?</a>
+            <a href="">Forget Password</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal hidden overlay" id="signup-modal">
+      <div class="modal-content signup-form-container">
+        <button class="close-button" id="close-signup-modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h2>Sign up</h2>
+        <form id="signup-form">
+          <input
+            type="text"
+            id="firstName"
+            name="firstname"
+            placeholder="First Name"
+            required
+          />
+          <input
+            type="text"
+            id="lastName"
+            name="lastname"
+            placeholder="Last Name"
+            required
+          />
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username"
+            required
+          />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Phone Number"
+          />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+            required
+          />
+          <input
+            type="text"
+            id="street"
+            name="street"
+            placeholder="Street"
+            required
+          />
+          <input
+            type="text"
+            id="number"
+            name="number"
+            placeholder="Street Number"
+            required
+          />
+          <input
+            type="text"
+            id="city"
+            name="city"
+            placeholder="City"
+            required
+          />
+          <input
+            type="text"
+            id="country"
+            name="country"
+            placeholder="Country"
+          />
+          <input
+            type="text"
+            id="zipCode"
+            name="zipcode"
+            placeholder="Zip Code"
+          />
+          <label>
+            <input type="checkbox" id="terms" required /> I agree to the Terms
+            and Conditions
+          </label>
+          <label>
+            <input type="checkbox" id="newsletter" /> Sign up for the newsletter
+          </label>
+          <button type="submit">Create your account</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="loading-spinner" class="spinner hidden"></div>
+    <!-- Add this near your other modals -->
+    <div class="modal hidden overlay" id="logout-confirm-modal">
+      <div class="modal-content logout-confirm">
+        <h2>Sign Out</h2>
+        <p>Are you sure you want to sign out?</p>
+        <div class="logout-buttons">
+          <button class="cancel-logout">Cancel</button>
+          <button class="confirm-logout">Sign Out</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal hidden overlay" id="manage-account-modal">
+      <div class="modal-content manage-account-container">
+        <button class="close-button" id="close-manage-modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h2>Manage Account</h2>
+
+        <form id="manage-account-form">
+          <!-- Account Information Section -->
+          <div class="form-section">
+            <h3>Account Information</h3>
+            <div class="input-with-edit">
+              <input
+                type="text"
+                id="username"
+                readonly
+                placeholder="Username"
+              />
+            </div>
+            <div class="input-with-edit">
+              <input type="email" id="email" readonly placeholder="Email" />
+            </div>
+          </div>
+
+          <!-- Personal Information Section -->
+          <div class="form-section">
+            <h3>Personal Information</h3>
+            <div class="name-group">
+              <div class="input-with-edit">
+                <input
+                  type="text"
+                  id="firstname"
+                  readonly
+                  placeholder="First Name"
+                />
+                <button type="button" class="edit-btn" data-field="firstname">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+              </div>
+              <div class="input-with-edit">
+                <input
+                  type="text"
+                  id="lastname"
+                  readonly
+                  placeholder="Last Name"
+                />
+                <button type="button" class="edit-btn" data-field="lastname">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+              </div>
+            </div>
+            <div class="input-with-edit">
+              <input
+                type="tel"
+                id="phone"
+                readonly
+                placeholder="Phone Number"
+              />
+              <button type="button" class="edit-btn" data-field="phone">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Address Information Section -->
+          <div class="form-section">
+            <h3>Address Information</h3>
+            <div class="name-group">
+              <div class="input-with-edit">
+                <input type="text" id="street" readonly placeholder="Street" />
+                <button type="button" class="edit-btn" data-field="street">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+              </div>
+              <div class="input-with-edit">
+                <input type="text" id="city" readonly placeholder="City" />
+                <button type="button" class="edit-btn" data-field="city">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="name-group">
+              <div class="input-with-edit">
+                <input
+                  type="text"
+                  id="country"
+                  readonly
+                  placeholder="Country"
+                />
+                <button type="button" class="edit-btn" data-field="country">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+              </div>
+              <div class="input-with-edit">
+                <input
+                  type="text"
+                  id="zipcode"
+                  readonly
+                  placeholder="Zip Code"
+                />
+                <button type="button" class="edit-btn" data-field="zipcode">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+              </div>
+            </div>
+            <button type="button" class="location-picker-btn">
+              <i class="fa-solid fa-location-dot"></i> Choose Location on Map
+            </button>
+            <div id="location-update-message" class="hidden"></div>
+          </div>
+
+          <div class="form-actions hidden">
+            <button type="button" class="cancel-edit">Cancel</button>
+            <button type="submit" class="save-changes">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="products-section active">
+      <h2 class="products-title">Products</h2>
+      <div class="products">
+        <div class="container" id="products-container">
+          <!-- Example of a single product card with updated rating structure -->
+        </div>
+      </div>
+    </div>
+    <div class="cart-section hidden">
+      <div class="container">
+        <div class="progg">
+          <button class="continue-shopping two">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+          <h2 class="section-title">Shopping Cart</h2>
+        </div>
+        <div class="cart-content">
+          <div class="cart-items">
+            <!-- Cart items will be rendered here -->
+          </div>
+          <div class="cart-summary">
+            <h3>Order Summary</h3>
+            <div class="summary-details">
+              <div class="summary-item">
+                <span>Subtotal</span>
+                <span class="subtotal">$0.00</span>
+              </div>
+              <div class="summary-item">
+                <span>Shipping</span>
+                <span class="shipping">Free</span>
+              </div>
+              <div class="summary-item total">
+                <span>Total</span>
+                <span class="total-amount">$0.00</span>
+              </div>
+            </div>
+            <button class="checkout-btn">
+              Proceed to Checkout
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="toast-container"></div>
+    <div class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <img src="imgs/1.png" alt="Basket Logo" />
+              <span>Basket</span>
+            </div>
+            <p class="footer-description">
+              Your one-stop shop for all your needs. Quality products, great
+              prices, and excellent service.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Categories</h3>
+            <ul>
+              <li><a href="#">Electronics</a></li>
+              <li><a href="#">Fashion</a></li>
+              <li><a href="#">Home & Garden</a></li>
+              <li><a href="#">Sports & Outdoors</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <ul class="contact-info">
+              <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+              <li><i class="fas fa-envelope"></i> support@basket.com</li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 123 Shopping Street, NY
+                10001
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>M&copy; 2024 Basket. All rights reserved.</p>
+          <p>Made With <3 By Asaad</p>
+          <div class="payment-methods">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-paypal"></i>
+            <i class="fab fa-cc-apple-pay"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
