@@ -1,18 +1,17 @@
 # Basket - E-Commerce Website
 
 ## 📷 **Preview**  
-
 ### **Homepage**  
 ![Homepage](https://i.ibb.co/8gXVY0TT/preview.webp)
 
----
-## Live Demo
+
+## 🌐Live Demo
 Check out the live version of the website: [Basket on Netlify](https://basket-asaad.netlify.app)
----
-## Overview
+
+## 👀Overview
 Basket is a fully functional e-commerce website built with JavaScript, leveraging the MVC (Model-View-Controller) architecture. It allows users to log in, choose their location using an interactive map, edit user data, add products to their cart, calculate the total cost, and proceed with payments using Stripe's test mode. The project integrates external APIs like Fake Store API for user authentication and Stripe for payment processing.
 
-## Features
+## ⚙️Features
 - **User Authentication:** Log in using Fake Store API credentials.
 - **Location Selection:** Interactive Mapbox-based map for selecting and saving the user's location.
 - **Cart System:** Add and remove items, view total cost, and update cart dynamically.
@@ -21,7 +20,7 @@ Basket is a fully functional e-commerce website built with JavaScript, leveragin
 - **MVC Architecture:** Code structured with separate concerns for Model, View, and Controller.
 - **Responsive Design:** Works across different devices.
 
-## Technologies Used
+## 🧑‍💻Technologies Used
 - **Frontend:** HTML, CSS, JavaScript
 - **Map Integration:** Mapbox GL JS
 - **API Integration:** Fake Store API for authentication and product data
@@ -29,7 +28,7 @@ Basket is a fully functional e-commerce website built with JavaScript, leveragin
 - **Version Control:** Git & GitHub
 - **Hosting:** Netlify
 
-## Folder Structure
+## 📂Folder Structure
 ```
 Basket/
 │── index.html       # Main entry point
@@ -44,7 +43,7 @@ Basket/
 │── README.md        # Documentation
 ```
 
-## How to Test the Website
+## 🧪How to Test the Website
 
 ### Log in with Fake Store API Users
 1. Open [Fake Store API Users](https://fakestoreapi.com/users)
@@ -67,16 +66,16 @@ Basket/
    - ZIP Code: Any value
 4. Submit the payment and check for a successful transaction message
 
-## How to Run the Project Locally
+## 💁‍♂️How to Run the Project Locally
 1. Clone the repository: `git clone https://github.com/asaadmansour/Basket.git`
 2. Navigate to the project folder: `cd Basket`
 3. Use Live Server
 
-## Best Practices Followed
+## 📏Best Practices Followed
 - **Separation of Concerns:** The project follows MVC architecture, keeping business logic separate from UI rendering
 - **Modular Code:** JavaScript files are structured into models, views, and controllers for maintainability
 - **Secure API Handling:** API keys are stored in config.js and ignored in Git
-## Author
+## 👐Author
 - **Asaad Mansour**  
 - 📧 **[Email](mailto:as89aadmansour@gmail.com)**  
 - 🔦 **[GitHub](https://github.com/asaadmansour)**  
