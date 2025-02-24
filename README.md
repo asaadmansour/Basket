@@ -44,7 +44,7 @@ Basket is a fully functional e-commerce website built with JavaScript, leveragin
 4. Submit the payment and check for a successful transaction message
 
 ## Live Demo
-Check out the live version of the website: [Basket on Netlify](https://basket-ecommerce.netlify.app)
+Check out the live version of the website: [Basket on Netlify](https://basket-asaad.netlify.app)
 
 ## Best Practices Followed
 - **Separation of Concerns:** The project follows MVC architecture, keeping business logic separate from UI rendering
