@@ -20,6 +20,20 @@ Basket is a fully functional e-commerce website built with JavaScript, leveragin
 - **Version Control:** Git & GitHub
 - **Hosting:** Netlify
 
+## Folder Structure
+
+Basket/
+│── index.html       # Main entry point
+│── styles/          # Contains all CSS files
+│── js/
+│   ├── models/      # Data handling logic (Fake Store API, cart management)
+│   ├── views/       # UI rendering logic (Login, cart, map, checkout)
+│   ├── controllers/ # Connects models & views (User actions, form handling)
+│   ├── config.js    # API keys & settings
+│── assets/          # Images & icons
+│── .gitignore       # Excludes node_modules and API keys
+│── README.md        # Documentation
+
 ## How to Test the Website
 
 ### Log in with Fake Store API Users
@@ -51,5 +65,7 @@ Check out the live version of the website: [Basket on Netlify](https://basket-as
 - **Modular Code:** JavaScript files are structured into models, views, and controllers for maintainability
 - **Secure API Handling:** API keys are stored in config.js and ignored in Git
 ## Author
-Developed by Asaad Mansour 
+- **Asaad Mansour**  
+- 📧 **[Email](mailto:as89aadmansour@gmail.com)**  
+- 🔦 **[GitHub](https://github.com/asaadmansour)**  
 
