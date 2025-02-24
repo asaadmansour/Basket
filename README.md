@@ -62,15 +62,9 @@ Check out the live version of the website: [Basket on Netlify](https://basket-as
 4. Submit the payment and check for a successful transaction message
 
 ## How to Run the Project Locally
-1. Clone the repository:
-   ```
-   git clone https://github.com/asaadmansour/Basket.git
-   ```
-2.Navigate to the project folder:
-```
-   cd Basket
-```
-3.Use Live Server 
+1. Clone the repository: `git clone https://github.com/asaadmansour/Basket.git`
+2. Navigate to the project folder: `cd Basket`
+3. Use Live Server
 
 ## Best Practices Followed
 - **Separation of Concerns:** The project follows MVC architecture, keeping business logic separate from UI rendering
