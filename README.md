@@ -1,5 +1,12 @@
 # Basket - E-Commerce Website
 
+## 📷 **Preview**  
+
+### **Homepage**  
+![Homepage](https://i.ibb.co/8gXVY0TT/preview.webp)
+
+---
+
 ## Overview
 Basket is a fully functional e-commerce website built with JavaScript, leveraging the MVC (Model-View-Controller) architecture. It allows users to log in, choose their location using an interactive map, edit user data, add products to their cart, calculate the total cost, and proceed with payments using Stripe's test mode. The project integrates external APIs like Fake Store API for user authentication and Stripe for payment processing.
 
