@@ -36,7 +36,7 @@ Open index.html in your browser.
 Alternatively, use Live Server (VS Code extension) for a better experience.
 ### Part 4: Testing, Live Demo, Best Practices, and Conclusion
 
-```markdown
+
 ## How to Test the Website
 
 ### Log in with Fake Store API Users
