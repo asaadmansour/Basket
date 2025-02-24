@@ -21,7 +21,7 @@ Basket is a fully functional e-commerce website built with JavaScript, leveragin
 - **Hosting:** Netlify
 
 ## Folder Structure
-
+```
 Basket/
 │── index.html       # Main entry point
 │── styles/          # Contains all CSS files
@@ -33,7 +33,7 @@ Basket/
 │── assets/          # Images & icons
 │── .gitignore       # Excludes node_modules and API keys
 │── README.md        # Documentation
-
+```
 ## How to Test the Website
 
 ### Log in with Fake Store API Users
