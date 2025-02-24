@@ -6,7 +6,9 @@
 ![Homepage](https://i.ibb.co/8gXVY0TT/preview.webp)
 
 ---
-
+## Live Demo
+Check out the live version of the website: [Basket on Netlify](https://basket-asaad.netlify.app)
+---
 ## Overview
 Basket is a fully functional e-commerce website built with JavaScript, leveraging the MVC (Model-View-Controller) architecture. It allows users to log in, choose their location using an interactive map, edit user data, add products to their cart, calculate the total cost, and proceed with payments using Stripe's test mode. The project integrates external APIs like Fake Store API for user authentication and Stripe for payment processing.
 
@@ -41,9 +43,6 @@ Basket/
 │── .gitignore       # Excludes node_modules and API keys
 │── README.md        # Documentation
 ```
-
-## Live Demo
-Check out the live version of the website: [Basket on Netlify](https://basket-asaad.netlify.app)
 
 ## How to Test the Website
 
